@@ -1,13 +1,31 @@
-package com.mvvp.my.mvvptest.com.mvp.test;
+package com.mvvp.my.mvvptest.com.mvp.test.bean;
 
 /**
  * Created by huangResplendent on 16/7/26.
  */
 public class Student {
+    private static Student student;
     private int id;
     private String name;
     private String age;
 
+    public static final Student getInstance(){
+        if(student==null){
+            student=new Student();
+            student.age="21";
+            student.name="huangResplendent";
+        }
+        return student;
+    }
+
+    public Student() {
+    }
+
+    public Student(int id, String name, String age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 
     public int getId() {
         return id;
